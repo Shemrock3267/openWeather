@@ -30,7 +30,7 @@ class UI {
 
     this.icon.setAttribute(
       "src",
-      `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
+      `https://openweathermap.org/img/w/${weather.weather[0].icon}.png`
     );
     this.humidity.textContent = `Relative Humidity: ${weather.main.humidity} %`;
     this.maxTemp.textContent = `Maximum Temperature: ${
