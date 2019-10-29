@@ -15,8 +15,19 @@ document.addEventListener("DOMContentLoaded", getWeather);
 
 // Change location event
 document.getElementById("w-change-btn").addEventListener("click", e => {
-  const city = document.getElementById("city").value;
+  showResult();
+});
 
+// Eventlistener for hitting 'Enter'
+const enterKey = document.querySelector("#city");
+enterKey.addEventListener("keydown", e => {
+  if (e.keyCode === 13) {
+    showResult();
+  }
+});
+
+function showResult() {
+  const city = document.getElementById("city").value;
   // Clear input field for a new search
   $("#locModal")
     .find("#city")
@@ -33,7 +44,7 @@ document.getElementById("w-change-btn").addEventListener("click", e => {
 
   // Close Modal  - only with jquery because of bootstrap (dependat on jquery)
   $("#locModal").modal("hide");
-});
+}
 
 function getWeather() {
   ui.showPreloader();
